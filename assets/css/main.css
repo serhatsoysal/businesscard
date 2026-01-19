@@ -1,11 +1,15 @@
 :root {
-    --bg-color: #0a0d14;
-    --card-bg: #0f1419;
-    --item-bg: #1a1f2e;
-    --accent-blue: #00d4ff;
-    --accent-green: #4ade80;
+    --bg-deep-navy: #050B1A;
+    --bg-navy: #0A1228;
+    --card-bg: #0d1420;
+    --item-bg: #111827;
+    --electric-blue: #2FA4FF;
+    --neon-cyan: #4CC9F0;
+    --copper: #FFB86C;
+    --gold: #F4A261;
     --text-primary: #ffffff;
-    --text-secondary: #b8c5d6;
+    --text-secondary: #8B9DC3;
+    --text-muted: #5A6A8A;
     --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
@@ -20,7 +24,7 @@ html {
 }
 
 body {
-    background: radial-gradient(ellipse at top, #0f1a2e 0%, #0a0d14 50%);
+    background: radial-gradient(ellipse at top, var(--bg-navy) 0%, var(--bg-deep-navy) 60%);
     background-attachment: fixed;
     font-family: 'Inter', sans-serif;
     color: var(--text-primary);
@@ -41,25 +45,56 @@ body::before {
     width: 100%;
     height: 100%;
     background-image: 
-        radial-gradient(circle at 20% 30%, rgba(0, 212, 255, 0.1) 0%, transparent 50%),
-        radial-gradient(circle at 80% 70%, rgba(74, 222, 128, 0.1) 0%, transparent 50%),
-        linear-gradient(45deg, transparent 30%, rgba(0, 212, 255, 0.03) 50%, transparent 70%);
+        radial-gradient(circle at 20% 30%, rgba(47, 164, 255, 0.08) 0%, transparent 50%),
+        radial-gradient(circle at 80% 70%, rgba(76, 201, 240, 0.06) 0%, transparent 50%);
     pointer-events: none;
     z-index: 0;
+}
+
+body::after {
+    content: '';
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: 
+        linear-gradient(90deg, transparent 0%, transparent calc(5% - 1px), rgba(47, 164, 255, 0.4) 5%, transparent calc(5% + 1px), transparent 15%),
+        linear-gradient(0deg, transparent 0%, transparent calc(5% - 1px), rgba(47, 164, 255, 0.4) 5%, transparent calc(5% + 1px), transparent 15%),
+        linear-gradient(90deg, transparent 0%, transparent calc(10% - 1px), rgba(76, 201, 240, 0.3) 10%, transparent calc(10% + 1px), transparent 20%),
+        linear-gradient(0deg, transparent 0%, transparent calc(10% - 1px), rgba(76, 201, 240, 0.3) 10%, transparent calc(10% + 1px), transparent 20%),
+        linear-gradient(90deg, transparent 85%, transparent calc(95% - 1px), rgba(255, 184, 108, 0.4) 95%, transparent calc(95% + 1px)),
+        linear-gradient(0deg, transparent 85%, transparent calc(95% - 1px), rgba(255, 184, 108, 0.4) 95%, transparent calc(95% + 1px)),
+        linear-gradient(90deg, transparent 80%, transparent calc(90% - 1px), rgba(244, 162, 97, 0.3) 90%, transparent calc(90% + 1px)),
+        linear-gradient(0deg, transparent 80%, transparent calc(90% - 1px), rgba(244, 162, 97, 0.3) 90%, transparent calc(90% + 1px)),
+        radial-gradient(circle at 5% 5%, var(--electric-blue) 3px, transparent 3px),
+        radial-gradient(circle at 10% 10%, var(--neon-cyan) 2px, transparent 2px),
+        radial-gradient(circle at 95% 5%, var(--copper) 3px, transparent 3px),
+        radial-gradient(circle at 90% 10%, var(--gold) 2px, transparent 2px),
+        radial-gradient(circle at 5% 95%, var(--gold) 3px, transparent 3px),
+        radial-gradient(circle at 10% 90%, var(--copper) 2px, transparent 2px),
+        radial-gradient(circle at 95% 95%, var(--electric-blue) 3px, transparent 3px),
+        radial-gradient(circle at 90% 90%, var(--neon-cyan) 2px, transparent 2px);
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+    filter: drop-shadow(0 0 8px rgba(47, 164, 255, 0.3)) drop-shadow(0 0 8px rgba(255, 184, 108, 0.2));
+    pointer-events: none;
+    z-index: 0;
+    opacity: 0.8;
 }
 
 .card-container {
     width: 100%;
     max-width: min(400px, 100vw - 20px);
-    background: linear-gradient(135deg, #0f1419 0%, #0a0d14 100%);
+    background: linear-gradient(135deg, var(--card-bg) 0%, var(--bg-deep-navy) 100%);
     border-radius: clamp(20px, 5vw, 40px);
     padding: clamp(20px, 5vw, 40px) clamp(15px, 4vw, 30px);
     text-align: center;
     box-shadow: 
-        0 0 60px rgba(0, 212, 255, 0.15),
-        0 0 30px rgba(74, 222, 128, 0.1),
-        inset 0 0 40px rgba(0, 0, 0, 0.3);
-    border: 1px solid rgba(0, 212, 255, 0.1);
+        0 0 40px rgba(47, 164, 255, 0.2),
+        0 0 60px rgba(76, 201, 240, 0.1),
+        0 8px 32px rgba(0, 0, 0, 0.4);
+    border: 1px solid rgba(47, 164, 255, 0.2);
     position: relative;
     z-index: 1;
 }
@@ -71,11 +106,11 @@ body::before {
     left: -2px;
     right: -2px;
     bottom: -2px;
-    background: linear-gradient(135deg, var(--accent-blue), var(--accent-green));
+    background: linear-gradient(135deg, var(--electric-blue), var(--neon-cyan));
     border-radius: clamp(20px, 5vw, 40px);
-    opacity: 0.3;
+    opacity: 0.15;
     z-index: -1;
-    filter: blur(8px);
+    filter: blur(12px);
 }
 
 .profile-section {
@@ -87,10 +122,10 @@ body::before {
     width: clamp(70px, 15vw, 100px);
     height: clamp(70px, 15vw, 100px);
     border-radius: 50%;
-    background: linear-gradient(135deg, var(--accent-blue), var(--accent-green));
+    background: linear-gradient(135deg, var(--electric-blue), var(--neon-cyan));
     box-shadow: 
-        0 0 20px rgba(0, 212, 255, 0.4),
-        0 0 12px rgba(74, 222, 128, 0.3);
+        0 0 25px rgba(47, 164, 255, 0.5),
+        0 0 15px rgba(76, 201, 240, 0.3);
     position: absolute;
     top: clamp(10px, 3vw, 20px);
     left: clamp(10px, 3vw, 20px);
@@ -112,9 +147,9 @@ body::before {
     right: -3px;
     bottom: -3px;
     border-radius: 50%;
-    background: linear-gradient(135deg, var(--accent-blue), var(--accent-green));
-    opacity: 0.3;
-    filter: blur(10px);
+    background: linear-gradient(135deg, var(--electric-blue), var(--neon-cyan));
+    opacity: 0.25;
+    filter: blur(15px);
     z-index: -1;
 }
 
@@ -124,7 +159,7 @@ body::before {
     border-radius: 50%;
     object-fit: cover;
     object-position: center 40%;
-    background: #0f1419;
+    background: var(--card-bg);
     pointer-events: none;
     transform: scale(1.15);
 }
@@ -138,7 +173,7 @@ h1 {
     font-size: clamp(20px, 5vw, 28px);
     font-weight: 700;
     margin-bottom: clamp(6px, 1.5vw, 8px);
-    text-shadow: 0 0 10px rgba(255, 255, 255, 0.1);
+    text-shadow: 0 0 15px rgba(47, 164, 255, 0.3);
 }
 
 .job-title {
@@ -152,11 +187,11 @@ h1 {
     margin-bottom: clamp(25px, 5vw, 35px);
     border-radius: clamp(20px, 4vw, 30px);
     overflow: hidden;
-    background: linear-gradient(135deg, var(--accent-blue), var(--accent-green));
+    background: linear-gradient(135deg, var(--electric-blue), var(--neon-cyan));
     padding: 2px;
     box-shadow: 
-        0 0 20px rgba(0, 212, 255, 0.4),
-        0 0 15px rgba(74, 222, 128, 0.3);
+        0 0 30px rgba(47, 164, 255, 0.3),
+        0 0 20px rgba(76, 201, 240, 0.2);
     display: flex;
     align-items: center;
     justify-content: center;
@@ -167,7 +202,7 @@ h1 {
     width: 100%;
     height: 100%;
     border-radius: clamp(18px, 4vw, 28px);
-    background: #0f1419;
+    background: var(--card-bg);
     object-fit: cover;
 }
 
@@ -180,9 +215,9 @@ h1 {
     min-width: 44px;
     min-height: 44px;
     border-radius: 50%;
-    background: rgba(15, 20, 25, 0.9);
-    border: 1px solid rgba(74, 222, 128, 0.3);
-    color: var(--accent-green);
+    background: rgba(13, 20, 32, 0.9);
+    border: 1px solid rgba(47, 164, 255, 0.3);
+    color: var(--electric-blue);
     display: flex;
     align-items: center;
     justify-content: center;
@@ -194,9 +229,11 @@ h1 {
 
 @media (hover: hover) {
     .video-control:hover {
-        background: rgba(74, 222, 128, 0.2);
-        border-color: var(--accent-green);
-        box-shadow: 0 0 15px rgba(74, 222, 128, 0.4);
+        background: rgba(47, 164, 255, 0.2);
+        border-color: var(--electric-blue);
+        box-shadow: 
+            0 0 20px rgba(47, 164, 255, 0.5),
+            0 0 30px rgba(76, 201, 240, 0.3);
         transform: scale(1.1);
     }
 }
@@ -227,26 +264,26 @@ h1 {
     align-items: center;
     justify-content: center;
     text-decoration: none;
-    color: var(--accent-green);
+    color: var(--neon-cyan);
     font-size: clamp(16px, 4vw, 20px);
     transition: var(--transition);
-    border: 1px solid rgba(74, 222, 128, 0.15);
+    border: 1px solid rgba(47, 164, 255, 0.2);
     box-shadow: 
-        0 0 10px rgba(74, 222, 128, 0.1),
-        inset 0 0 10px rgba(0, 0, 0, 0.2);
+        0 0 15px rgba(47, 164, 255, 0.1),
+        inset 0 0 10px rgba(0, 0, 0, 0.3);
     touch-action: manipulation;
 }
 
 @media (hover: hover) {
     .grid-item:hover {
         transform: translateY(-5px);
-        background-color: rgba(74, 222, 128, 0.15);
-        border-color: var(--accent-green);
+        background: linear-gradient(135deg, rgba(47, 164, 255, 0.15), rgba(76, 201, 240, 0.1));
+        border-color: var(--electric-blue);
         box-shadow: 
-            0 0 20px rgba(74, 222, 128, 0.4),
-            0 0 15px rgba(0, 212, 255, 0.2),
-            inset 0 0 15px rgba(74, 222, 128, 0.1);
-        color: var(--accent-green);
+            0 0 25px rgba(47, 164, 255, 0.4),
+            0 0 35px rgba(76, 201, 240, 0.3),
+            inset 0 0 20px rgba(47, 164, 255, 0.15);
+        color: var(--electric-blue);
     }
 }
 
@@ -264,14 +301,14 @@ h1 {
 
 .grid-item.highlight {
     background-color: var(--item-bg);
-    color: var(--accent-green);
-    border-color: var(--accent-green);
+    color: var(--electric-blue);
+    border-color: var(--electric-blue);
 }
 
 .grid-item.action-btn {
     background-color: var(--item-bg);
-    color: var(--accent-green);
-    border-color: var(--accent-green);
+    color: var(--electric-blue);
+    border-color: var(--electric-blue);
 }
 
 .lang-controls {
@@ -283,7 +320,7 @@ h1 {
 
 .lang-controls button {
     background: transparent;
-    border: 1px solid var(--item-bg);
+    border: 1px solid rgba(47, 164, 255, 0.15);
     color: var(--text-secondary);
     padding: clamp(6px, 1.5vw, 8px) clamp(10px, 2.5vw, 14px);
     min-height: 44px;
@@ -297,9 +334,12 @@ h1 {
 
 @media (hover: hover) {
     .lang-controls button:hover {
-        color: var(--accent-green);
-        border-color: var(--accent-green);
-        box-shadow: 0 0 10px rgba(74, 222, 128, 0.3);
+        color: var(--electric-blue);
+        border-color: var(--electric-blue);
+        background: rgba(47, 164, 255, 0.05);
+        box-shadow: 
+            0 0 15px rgba(47, 164, 255, 0.3),
+            0 0 25px rgba(76, 201, 240, 0.2);
     }
 }
 
@@ -321,12 +361,12 @@ h1 {
 .bubble {
     position: absolute;
     border-radius: 50%;
-    background: radial-gradient(circle at 30% 30%, rgba(0, 212, 255, 0.3), rgba(74, 222, 128, 0.2));
+    background: radial-gradient(circle at 30% 30%, rgba(47, 164, 255, 0.25), rgba(76, 201, 240, 0.15));
     box-shadow: 
-        0 0 20px rgba(0, 212, 255, 0.4),
-        0 0 30px rgba(74, 222, 128, 0.3),
-        inset 0 0 15px rgba(255, 255, 255, 0.1);
-    opacity: 0.6;
+        0 0 25px rgba(47, 164, 255, 0.3),
+        0 0 35px rgba(76, 201, 240, 0.2),
+        inset 0 0 15px rgba(255, 255, 255, 0.08);
+    opacity: 0.5;
     will-change: transform;
 }
 
