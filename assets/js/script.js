@@ -145,10 +145,14 @@ document.addEventListener('DOMContentLoaded', () => {
                 if (avatarY >= targetPos.y && velocityY > 0) {
                     avatarY = targetPos.y;
                     
-                    targetBtn.style.animation = 'buttonHit 0.4s ease';
+                    targetBtn.classList.add('exploding');
+                    targetBtn.style.animation = 'buttonHit 0.6s ease';
+                    
                     setTimeout(() => {
+                        targetBtn.classList.remove('exploding');
+                        targetBtn.classList.add('hit-active');
                         targetBtn.style.animation = '';
-                    }, 400);
+                    }, 600);
                     
                     if (currentTarget < bounceHeights.length - 1) {
                         velocityY = -Math.sqrt(2 * gravity * bounceHeights[currentTarget]);
