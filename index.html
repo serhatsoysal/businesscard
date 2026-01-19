@@ -11,44 +11,49 @@
 </head>
 <body>
     <div class="card-container">
+        <div class="floating-bubbles"></div>
         <header class="profile-section">
             <div class="avatar-wrapper">
-                <img src="assets/img/avatar.png" alt="Serhat Soysal" class="avatar">
+                <img src="assets/public/serhat_avatar_pp.png" alt="Serhat Soysal" class="avatar">
             </div>
-            <h1 data-i18n="name">Serhat Soysal</h1>
-            <p class="job-title" data-i18n="job_title">Software Engineer | AI & Distributed Systems Specialist</p>
+            <div class="video-container">
+                <video class="welcome-video" autoplay loop muted playsinline>
+                    <source src="assets/public/avatar_welcome.mp4" type="video/mp4">
+                </video>
+                <button class="video-control muted" aria-label="Toggle sound">
+                    <i class="fa-solid fa-volume-xmark"></i>
+                </button>
+            </div>
         </header>
 
-        <div class="qr-container">
-            <div class="qr-frame">
-                <img src="https://api.qrserver.com/v1/create-qr-code/?size=180x180&data=https://serhatsoysal.github.io/businesscard/&bgcolor=151921&color=ffffff" alt="QR Code">
-            </div>
-            <p class="scan-text" data-i18n="scan_text">SCAN TO CONNECT</p>
+        <div class="profile-info">
+            <h1 data-i18n="name">Serhat Soysal</h1>
+            <p class="job-title" data-i18n="job_title">Software Engineer | AI & Distributed Systems Specialist</p>
         </div>
 
         <div class="bento-grid">
-            <a href="https://www.linkedin.com/in/soysalserhat" class="grid-item highlight" target="_blank">
+            <a href="https://serhatsoysal.com" class="grid-item" target="_blank">
+                <i class="fa-solid fa-globe"></i>
+            </a>
+            <a href="https://www.linkedin.com/in/soysalserhat" class="grid-item" target="_blank">
                 <i class="fa-brands fa-linkedin-in"></i>
             </a>
             <a href="https://github.com/serhatsoysal" class="grid-item" target="_blank">
                 <i class="fa-brands fa-github"></i>
             </a>
-            <a href="https://serhatsoysal.github.io/fluxpay-docs/" class="grid-item" target="_blank">
-                <i class="fa-solid fa-file-lines"></i>
-            </a>
             <a href="mailto:contact@serhatsoysal.com" class="grid-item">
                 <i class="fa-solid fa-envelope"></i>
             </a>
-            <a href="https://serhatsoysal.com" class="grid-item">
-                <i class="fa-solid fa-globe"></i>
+            <a href="https://fluxpay-dashboard.onrender.com/" class="grid-item" target="_blank">
+                <i class="fa-solid fa-credit-card"></i>
             </a>
-            <a href="#" class="grid-item">
-                <i class="fa-brands fa-x-twitter"></i>
+            <a href="https://serhatsoysal.github.io/fluxpay-docs/" class="grid-item" target="_blank">
+                <i class="fa-solid fa-book"></i>
             </a>
-            <a href="#" class="grid-item">
-                <i class="fa-brands fa-discord"></i>
+            <a href="https://haditra.onrender.com/" class="grid-item" target="_blank">
+                <i class="fa-solid fa-building"></i>
             </a>
-            <a href="assets/img/cv.pdf" class="grid-item action-btn" download>
+            <a href="assets/public/serhatsoysalcv.pdf" class="grid-item action-btn" download="Serhat_Soysal_CV.pdf">
                 <i class="fa-solid fa-download"></i>
             </a>
         </div>
