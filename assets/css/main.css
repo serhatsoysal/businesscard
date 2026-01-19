@@ -362,6 +362,14 @@ h1 {
 }
 
 @media (max-width: 480px) {
+    .profile-section {
+        margin-bottom: 15px;
+    }
+    
+    .video-container {
+        margin-bottom: 20px;
+    }
+    
     h1 {
         font-size: 22px;
     }
