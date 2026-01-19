@@ -190,11 +190,21 @@ document.addEventListener('DOMContentLoaded', () => {
             requestAnimationFrame(animateAvatar);
         }
         
-        setTimeout(() => {
+        const startAnimation = () => {
             const firstPos = getButtonPosition(0);
-            avatarX = firstPos.x;
-            avatarWrapper.style.left = avatarX + 'px';
-            animateAvatar();
-        }, 1000);
+            if (firstPos && targetButtons[0]) {
+                avatarX = firstPos.x;
+                avatarWrapper.style.left = avatarX + 'px';
+                animateAvatar();
+            }
+        };
+        
+        if (document.readyState === 'complete') {
+            setTimeout(startAnimation, 1500);
+        } else {
+            window.addEventListener('load', () => {
+                setTimeout(startAnimation, 1500);
+            });
+        }
     }
 });
