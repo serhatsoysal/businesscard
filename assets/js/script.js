@@ -175,7 +175,7 @@ document.addEventListener('DOMContentLoaded', () => {
                                 const profileRect = profileInfo.getBoundingClientRect();
                                 
                                 const finalX = 10;
-                                const finalY = videoRect.bottom - cardRect.top - 50;
+                                const finalY = videoRect.bottom - cardRect.top - 100;
                                 
                                 avatarWrapper.style.left = finalX + 'px';
                                 avatarWrapper.style.top = finalY + 'px';
