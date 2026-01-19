@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Serhat Soysal | Digital Business Card</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="assets/css/main.css">
+    <link rel="stylesheet" id="rtl-style" href="" disabled>
+</head>
+<body>
+    <div class="card-container">
+        <header class="profile-section">
+            <div class="avatar-wrapper">
+                <img src="assets/img/avatar.png" alt="Serhat Soysal" class="avatar">
+            </div>
+            <h1 data-i18n="name">Serhat Soysal</h1>
+            <p class="job-title" data-i18n="job_title">Software Engineer | AI & Distributed Systems Specialist</p>
+        </header>
+
+        <div class="qr-container">
+            <div class="qr-frame">
+                <img src="https://api.qrserver.com/v1/create-qr-code/?size=180x180&data=https://serhatsoysal.github.io/businesscard/&bgcolor=151921&color=ffffff" alt="QR Code">
+            </div>
+            <p class="scan-text" data-i18n="scan_text">SCAN TO CONNECT</p>
+        </div>
+
+        <div class="bento-grid">
+            <a href="https://www.linkedin.com/in/soysalserhat" class="grid-item highlight" target="_blank">
+                <i class="fa-brands fa-linkedin-in"></i>
+            </a>
+            <a href="https://github.com/serhatsoysal" class="grid-item" target="_blank">
+                <i class="fa-brands fa-github"></i>
+            </a>
+            <a href="https://serhatsoysal.github.io/fluxpay-docs/" class="grid-item" target="_blank">
+                <i class="fa-solid fa-file-lines"></i>
+            </a>
+            <a href="mailto:contact@serhatsoysal.com" class="grid-item">
+                <i class="fa-solid fa-envelope"></i>
+            </a>
+            <a href="https://serhatsoysal.com" class="grid-item">
+                <i class="fa-solid fa-globe"></i>
+            </a>
+            <a href="#" class="grid-item">
+                <i class="fa-brands fa-x-twitter"></i>
+            </a>
+            <a href="#" class="grid-item">
+                <i class="fa-brands fa-discord"></i>
+            </a>
+            <a href="assets/img/cv.pdf" class="grid-item action-btn" download>
+                <i class="fa-solid fa-download"></i>
+            </a>
+        </div>
+
+        <footer class="lang-controls">
+            <button onclick="setLanguage('en')">EN</button>
+            <button onclick="setLanguage('tr')">TR</button>
+            <button onclick="setLanguage('ar')">AR</button>
+        </footer>
+    </div>
+    <script src="assets/js/i18n.js"></script>
+    <script src="assets/js/script.js"></script>
+</body>
+</html>

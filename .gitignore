@@ -1,0 +1,29 @@
+# Environment
+.env
+.env.local
+.env.*.local
+
+# OS
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+Thumbs.db
+Desktop.ini
+.directory
+
+# Editor/IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+.project
+.classpath
+.settings/
+
+# Temporary
+*.tmp
+*.bak
+*.cache

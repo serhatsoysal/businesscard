@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://serhatsoysal.github.io/businesscard/sitemap.xml

@@ -1,0 +1,6 @@
+body {
+    direction: rtl;
+}
+.bento-grid {
+    direction: ltr; /* Keep icons layout consistent */
+}
