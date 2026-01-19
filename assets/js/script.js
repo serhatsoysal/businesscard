@@ -91,9 +91,8 @@ document.addEventListener('DOMContentLoaded', () => {
     const avatarWrapper = document.querySelector('.avatar-wrapper');
     const bentoGrid = document.querySelector('.bento-grid');
     const cardContainer = document.querySelector('.card-container');
-    const isDesktop = window.innerWidth > 768;
     
-    if (avatarWrapper && bentoGrid && cardContainer && isDesktop && !prefersReducedMotion) {
+    if (avatarWrapper && bentoGrid && cardContainer && !prefersReducedMotion) {
         const targetButtons = [items[0], items[1], items[2]];
         let animationComplete = false;
         let currentTarget = 0;
