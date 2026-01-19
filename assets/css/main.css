@@ -356,13 +356,6 @@ h1 {
         min-height: auto;
     }
     
-    .avatar-wrapper {
-        position: relative;
-        top: auto;
-        left: auto;
-        margin: 0 auto 15px;
-    }
-    
     .bento-grid {
         gap: 10px;
     }
